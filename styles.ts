@@ -152,6 +152,49 @@ export const styles: { [key: string]: React.CSSProperties } = {
   markAsPaidButton: { padding: '5px 10px', fontSize: '12px', backgroundColor: successColor, color: white, border: 'none', borderRadius: '4px', cursor: 'pointer', transition: 'background-color 0.2s ease', },
   logFinancials: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '10px', paddingTop: '10px', borderTop: `1px solid ${lightBorder}` },
 
+<<<<<<< HEAD
+=======
+  // --- Reports & Charts Styles ---
+  reportSection: { marginBottom: '25px', backgroundColor: white, padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' },
+  reportChartContainer: { position: 'relative', height: '300px', width: '100%', maxWidth: '500px', margin: '20px auto' },
+  reportSubHeader: { fontSize: '18px', fontWeight: 700, color: mainTextColor, margin: '20px 0 15px 0', borderBottom: `1px solid ${lightBorder}`, paddingBottom: '10px' },
+  reportDetailsGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' },
+  reportDetailCard: { backgroundColor: mediumBackground, padding: '15px', borderRadius: '6px', textAlign: 'center', borderRight: `4px solid ${accentColor}` },
+  reportDetailLabel: { fontSize: '14px', color: lightTextColor, marginBottom: '5px' },
+  reportDetailValue: { fontSize: '24px', fontWeight: 700, color: brandColor },
+
+  // New: Patient Report Specific Styles
+  patientReportSection: { backgroundColor: white, padding: '25px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', marginBottom: '30px' },
+  patientReportHeader: { fontSize: '22px', fontWeight: 700, color: mainTextColor, marginBottom: '20px', borderBottom: `1px solid ${lightBorder}`, paddingBottom: '10px' },
+  patientReportDetailGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' },
+  patientReportStatCard: { backgroundColor: mediumBackground, padding: '15px', borderRadius: '8px', textAlign: 'center', borderRight: `4px solid ${brandColor}` },
+  patientHistoryList: { listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' },
+  historyItem: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    backgroundColor: lightBackground,
+    padding: '15px',
+    borderRadius: '8px',
+    borderRight: `5px solid ${accentColor}`,
+    boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
+  },
+
+  // New: Doctor Report Specific Styles (mirroring patient report for consistency)
+  doctorReportSection: { backgroundColor: white, padding: '25px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', marginBottom: '30px' },
+  doctorReportHeader: { fontSize: '22px', fontWeight: 700, color: mainTextColor, marginBottom: '20px', borderBottom: `1px solid ${lightBorder}`, paddingBottom: '10px' },
+  doctorReportDetailGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' },
+  doctorReportStatCard: { backgroundColor: mediumBackground, padding: '15px', borderRadius: '8px', textAlign: 'center', borderRight: `4px solid ${brandColor}` }, // Uses brandColor by default
+  doctorHistoryList: { listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' },
+
+
+  // --- Pagination Styles ---
+  paginationContainer: { display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px', marginTop: '20px' },
+  paginationButton: { padding: '8px 15px', border: `1px solid ${darkBorder}`, borderRadius: '6px', backgroundColor: white, cursor: 'pointer', transition: 'background-color 0.3s ease, border-color 0.3s ease', color: mainTextColor, fontFamily: "'Cairo Play', sans-serif" },
+  paginationButtonActive: { backgroundColor: accentColor, borderColor: accentColor, color: white },
+  paginationButtonDisabled: { opacity: 0.5, cursor: 'not-allowed' },
+
+>>>>>>> 9da656e (Initial commit for CuraPT clinic app)
   // --- MOBILE STYLES ---
   sidebarMobile: { transform: 'translateX(100%)', transition: 'transform 0.3s ease-in-out', zIndex: 1100, width: '280px' },
   sidebarMobileOpen: { transform: 'translateX(0)' },

@@ -8,6 +8,7 @@ export const TreatmentLogForm: React.FC<{
     onCancel: () => void;
     isMobileView: boolean;
 }> = ({ patient, onAddLog, onCancel, isMobileView }) => {
+<<<<<<< HEAD
     const [logData, setLogData] = useState({
         date: new Date().toISOString().split('T')[0],
         treatment: '',
@@ -19,6 +20,21 @@ export const TreatmentLogForm: React.FC<{
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+=======
+    const [logData, setLogData] = useState<Omit<TreatmentLog, 'id'>>({
+        date: new Date().toISOString().split('T')[0],
+        treatment: '',
+        outcome: '',
+        cost: 0,
+        paid: false,
+        weight: patient.primaryCare === 'nutrition' ? patient.weight : undefined,
+        status: patient.primaryCare === 'physical_therapy' ? '' : undefined,
+        satisfactionRating: undefined, // New: Default to undefined
+        feedback: undefined, // New: Default to undefined
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+>>>>>>> 9da656e (Initial commit for CuraPT clinic app)
         const { name, value } = e.target;
         setLogData(prev => ({...prev, [name]: value}));
     };
@@ -33,6 +49,10 @@ export const TreatmentLogForm: React.FC<{
         onAddLog(patient.id, {
             ...logData,
             cost: Number(logData.cost) || 0,
+<<<<<<< HEAD
+=======
+            satisfactionRating: logData.satisfactionRating ? Number(logData.satisfactionRating) : undefined,
+>>>>>>> 9da656e (Initial commit for CuraPT clinic app)
         });
     };
 
@@ -72,7 +92,11 @@ export const TreatmentLogForm: React.FC<{
                      <div style={formRowStyle}>
                         <div style={styles.formGroup}>
                             <label style={styles.label} htmlFor="cost">تكلفة الجلسة</label>
+<<<<<<< HEAD
                             <input style={styles.input} type="number" id="cost" name="cost" value={logData.cost} onChange={handleChange} placeholder="مثال: 350" required />
+=======
+                            <input style={styles.input} type="number" id="cost" name="cost" value={logData.cost || ''} onChange={handleChange} placeholder="مثال: 350" required />
+>>>>>>> 9da656e (Initial commit for CuraPT clinic app)
                         </div>
                         <div style={{...styles.formGroup, justifyContent: 'center'}}>
                              <div style={styles.formGroupHorizontal}>
@@ -81,6 +105,43 @@ export const TreatmentLogForm: React.FC<{
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
+=======
+
+                    {/* New: Satisfaction Rating and Feedback */}
+                    <div style={formRowStyle}>
+                        <div style={styles.formGroup}>
+                            <label style={styles.label} htmlFor="satisfactionRating">تقييم الرضا (1-5)</label>
+                            <select 
+                                style={styles.select} 
+                                id="satisfactionRating" 
+                                name="satisfactionRating" 
+                                value={logData.satisfactionRating || ''} 
+                                onChange={handleChange}
+                            >
+                                <option value="">اختر تقييم...</option>
+                                <option value="1">1 (غير راضٍ جداً)</option>
+                                <option value="2">2 (غير راضٍ)</option>
+                                <option value="3">3 (محايد)</option>
+                                <option value="4">4 (راضٍ)</option>
+                                <option value="5">5 (راضٍ جداً)</option>
+                            </select>
+                        </div>
+                        <div style={styles.formGroup}>
+                            <label style={styles.label} htmlFor="feedback">ملاحظات المريض (اختياري)</label>
+                            <textarea 
+                                style={styles.textarea} 
+                                id="feedback" 
+                                name="feedback" 
+                                value={logData.feedback || ''} 
+                                onChange={handleChange} 
+                                placeholder="اكتب أي ملاحظات هنا..."
+                            ></textarea>
+                        </div>
+                    </div>
+                    {/* End New Fields */}
+
+>>>>>>> 9da656e (Initial commit for CuraPT clinic app)
                      <div style={styles.formActions}>
                         <button type="button" style={{ ...styles.button, ...styles.buttonSecondary }} onClick={onCancel}>إلغاء</button>
                         <button type="submit" style={{ ...styles.button, ...styles.buttonPrimary }}>إضافة سجل</button>
