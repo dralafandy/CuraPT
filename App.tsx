@@ -8,10 +8,9 @@ import { DashboardView } from './views/DashboardView';
 import { PatientsView } from './views/PatientsView';
 import { DoctorsView } from './views/DoctorsView';
 import { AppointmentsView } from './views/AppointmentsView';
-<<<<<<< HEAD
-=======
+
 import { ReportsView } from './views/ReportsView'; // New: Import ReportsView
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)
+
 
 // Import Forms/Modals
 import { PatientForm } from './components/PatientForm';
@@ -19,11 +18,11 @@ import { TreatmentLogForm } from './components/TreatmentLogForm';
 import { DoctorForm } from './components/DoctorForm';
 import { AppointmentForm } from './components/AppointmentForm';
 import { DoctorScheduleModal } from './components/DoctorScheduleModal';
-<<<<<<< HEAD
+
 import { DashboardIcon, PatientsIcon, DoctorsIcon, AppointmentsIcon, HamburgerIcon, CloseIcon } from './components/Icons'; // Add Hamburger and Close Icons
 =======
 import { DashboardIcon, PatientsIcon, DoctorsIcon, AppointmentsIcon, ReportsIcon, HamburgerIcon, CloseIcon } from './components/Icons'; // Add ReportsIcon
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)
+
 
 const generateSampleData = () => {
     const sampleDoctors: Doctor[] = [
@@ -36,23 +35,23 @@ const generateSampleData = () => {
         {
             id: 'pat-1', createdAt: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString(), name: 'خالد سعيد', complaint: 'ألم أسفل الظهر', dob: '1985-05-20', gender: 'male', phone: '01011112222', email: 'khaled@email.com', address: '123 شارع النيل, القاهرة', height: 180, weight: 85, medicalHistory: 'لا يوجد', notes: 'يعمل في مكتب لساعات طويلة', primaryCare: 'physical_therapy',
             treatmentHistory: [
-<<<<<<< HEAD
+
                 { id: 'log-1', date: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], treatment: 'جلسة علاج طبيعي للظهر', outcome: 'تحسن طفيف', status: 'مستمر', cost: 350, paid: true },
                 { id: 'log-2', date: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], treatment: 'جلسة علاج طبيعي للظهر - متابعة', outcome: 'تحسن كبير', status: 'مستمر', cost: 350, paid: false }
-=======
+
                 { id: 'log-1', date: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], treatment: 'جلسة علاج طبيعي للظهر', outcome: 'تحسن طفيف', status: 'مستمر', cost: 350, paid: true, satisfactionRating: 4, feedback: 'العلاج كان مفيداً جداً، شعرت بتحسن كبير.' },
                 { id: 'log-2', date: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], treatment: 'جلسة علاج طبيعي للظهر - متابعة', outcome: 'تحسن كبير', status: 'مستمر', cost: 350, paid: false, satisfactionRating: 5, feedback: 'نتائج ممتازة، أوصي به.' }
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)
+
             ]
         },
         {
             id: 'pat-2', createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(), name: 'نورا حسن', complaint: 'استشارة لفقدان الوزن', dob: '1992-11-10', gender: 'female', phone: '01122223333', email: 'noura@email.com', address: '456 شارع الجمهورية, الجيزة', height: 165, weight: 78, medicalHistory: 'لا يوجد', notes: 'ترغب في نظام غذائي صحي', primaryCare: 'nutrition',
             treatmentHistory: [
-<<<<<<< HEAD
+
                 { id: 'log-3', date: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], treatment: 'وضع خطة غذائية أولية', outcome: 'المريضة متحمسة للبدء', weight: 78, cost: 500, paid: true }
-=======
+
                 { id: 'log-3', date: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], treatment: 'وضع خطة غذائية أولية', outcome: 'المريضة متحمسة للبدء', weight: 78, cost: 500, paid: true, satisfactionRating: 3, feedback: 'الخطة جيدة ولكن أجد صعوبة في الالتزام بها.' }
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)
+
             ]
         },
         { id: 'pat-3', createdAt: new Date().toISOString(), name: 'عمر طارق', complaint: 'إصابة في الركبة', dob: '2001-03-15', gender: 'male', phone: '01233334444', email: 'omar@email.com', address: '789 شارع الحرية, الإسكندرية', height: 175, weight: 72, medicalHistory: 'إصابة رياضية سابقة', notes: '', primaryCare: 'physical_therapy', treatmentHistory: [] },
@@ -89,11 +88,11 @@ export const App = () => {
     const [patients, setPatients] = useState<Patient[]>([]);
     const [doctors, setDoctors] = useState<Doctor[]>([]);
     const [appointments, setAppointments] = useState<Appointment[]>([]);
-<<<<<<< HEAD
+
     const [activeView, setActiveView] = useState<'dashboard' | 'patients' | 'doctors' | 'appointments'>('dashboard');
-=======
+
     const [activeView, setActiveView] = useState<'dashboard' | 'patients' | 'doctors' | 'appointments' | 'reports'>('dashboard'); // New: Added 'reports'
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)
+
     const [reminderSettings, setReminderSettings] = useState({ leadTimeHours: 24 });
     
     // Modal State
@@ -150,13 +149,13 @@ export const App = () => {
             color: doc.color || DOCTOR_COLORS[index % DOCTOR_COLORS.length]
         }));
         
-<<<<<<< HEAD
+
         // Simple migration: add financial fields to old treatment logs if they don't exist
         const patientsWithFinancials = loadedPatients.map(p => ({
-=======
+
         // Simple migration: add financial and satisfaction fields to old treatment logs if they don't exist
         const patientsWithFinancialsAndSatisfaction = loadedPatients.map(p => ({
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)
+
             ...p,
             createdAt: p.createdAt || new Date().toISOString(),
             treatmentHistory: p.treatmentHistory.map((log, index) => ({
@@ -164,19 +163,19 @@ export const App = () => {
                 id: log.id || `migrated-${p.id}-${index}`,
                 cost: log.cost ?? 0,
                 paid: log.paid ?? false,
-<<<<<<< HEAD
+
             }))
         }));
 
         setPatients(patientsWithFinancials);
-=======
+
                 satisfactionRating: log.satisfactionRating ?? undefined, // Ensure default is undefined
                 feedback: log.feedback ?? undefined, // Ensure default is undefined
             }))
         }));
 
         setPatients(patientsWithFinancialsAndSatisfaction);
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)
+
         setDoctors(doctorsWithColors);
         setAppointments(loadedAppointments);
         setReminderSettings(loadData('clinicReminderSettings', { leadTimeHours: 24 }));
@@ -419,15 +418,15 @@ export const App = () => {
                         <AppointmentsIcon active={activeView === 'appointments'} />
                         المواعيد
                     </button>
-<<<<<<< HEAD
-=======
+
+
                     <button 
                         style={{...styles.sidebarNavButton, ...(activeView === 'reports' && styles.sidebarNavButtonActive)}} 
                         onClick={() => {setActiveView('reports'); if(isMobileView) setIsSidebarOpen(false);}}>
                         <ReportsIcon active={activeView === 'reports'} />
                         التقارير
                     </button>
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)
+
                 </nav>
             </div>
 
@@ -477,8 +476,7 @@ export const App = () => {
                         isMobileView={isMobileView}
                     />
                 )}
-<<<<<<< HEAD
-=======
+
                 {activeView === 'reports' && ( // New: Render ReportsView
                     <ReportsView
                         patients={patients}
@@ -487,7 +485,7 @@ export const App = () => {
                         isMobileView={isMobileView}
                     />
                 )}
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)
+
             </div>
 
             {/* Modals */}
