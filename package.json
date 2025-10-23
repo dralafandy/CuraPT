@@ -2,33 +2,20 @@
   "name": "cura-clinic-app",
   "version": "0.1.0",
   "private": true,
-<<<<<<< HEAD
-  "type": "module",
-  "homepage": "https://dralafandy.github.io/CuraPT",
-  "scripts": {
-    "start": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-=======
   "homepage": "https://dralafandy.github.io/CuraPT",
   "type": "module",
   "scripts": {
     "start": "npx vite",
     "build": "npx vite build",
     "preview": "npx vite preview",
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^19.2.0",
-<<<<<<< HEAD
-    "react-dom": "^19.2.0"
-=======
     "react-dom": "^19.2.0",
     "chart.js": "^4.4.3",
     "react-chartjs-2": "^5.2.0"
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
