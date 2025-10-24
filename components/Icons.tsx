@@ -36,8 +36,6 @@ export const AppointmentsIcon: React.FC<{ active: boolean }> = ({ active }) => (
     </svg>
 );
 
-<<<<<<< HEAD
-=======
 export const ReportsIcon: React.FC<{ active: boolean }> = ({ active }) => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: active ? '#0056b3' : '#495057' }}>
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -48,7 +46,6 @@ export const ReportsIcon: React.FC<{ active: boolean }> = ({ active }) => (
     </svg>
 );
 
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)
 export const HamburgerIcon: React.FC = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -62,8 +59,4 @@ export const CloseIcon: React.FC = () => (
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
     </svg>
-<<<<<<< HEAD
 );
-=======
-);
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)

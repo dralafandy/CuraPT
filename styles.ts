@@ -152,8 +152,6 @@ export const styles: { [key: string]: React.CSSProperties } = {
   markAsPaidButton: { padding: '5px 10px', fontSize: '12px', backgroundColor: successColor, color: white, border: 'none', borderRadius: '4px', cursor: 'pointer', transition: 'background-color 0.2s ease', },
   logFinancials: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '10px', paddingTop: '10px', borderTop: `1px solid ${lightBorder}` },
 
-<<<<<<< HEAD
-=======
   // --- Reports & Charts Styles ---
   reportSection: { marginBottom: '25px', backgroundColor: white, padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' },
   reportChartContainer: { position: 'relative', height: '300px', width: '100%', maxWidth: '500px', margin: '20px auto' },
@@ -194,7 +192,6 @@ export const styles: { [key: string]: React.CSSProperties } = {
   paginationButtonActive: { backgroundColor: accentColor, borderColor: accentColor, color: white },
   paginationButtonDisabled: { opacity: 0.5, cursor: 'not-allowed' },
 
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)
   // --- MOBILE STYLES ---
   sidebarMobile: { transform: 'translateX(100%)', transition: 'transform 0.3s ease-in-out', zIndex: 1100, width: '280px' },
   sidebarMobileOpen: { transform: 'translateX(0)' },

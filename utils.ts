@@ -1,16 +1,10 @@
 import { Doctor } from './types';
 
-<<<<<<< HEAD
-export const calculateAge = (dob: string) => {
-    if (!dob) return '';
-    const birthDate = new Date(dob);
-=======
 export const calculateAge = (dob: string): number | null => {
     if (!dob) return null;
     const birthDate = new Date(dob);
     // FIX: Handle cases where the date string might be invalid, resulting in an "Invalid Date"
     if (isNaN(birthDate.getTime())) return null; 
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)
     const today = new Date();
     let age = today.getFullYear() - birthDate.getFullYear();
     const m = today.getMonth() - birthDate.getMonth();

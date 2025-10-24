@@ -8,19 +8,6 @@ export const TreatmentLogForm: React.FC<{
     onCancel: () => void;
     isMobileView: boolean;
 }> = ({ patient, onAddLog, onCancel, isMobileView }) => {
-<<<<<<< HEAD
-    const [logData, setLogData] = useState({
-        date: new Date().toISOString().split('T')[0],
-        treatment: '',
-        outcome: '',
-        cost: '',
-        paid: false,
-        weight: patient.primaryCare === 'nutrition' ? patient.weight : undefined,
-        status: patient.primaryCare === 'physical_therapy' ? '' : undefined,
-    });
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-=======
     const [logData, setLogData] = useState<Omit<TreatmentLog, 'id'>>({
         date: new Date().toISOString().split('T')[0],
         treatment: '',
@@ -34,7 +21,6 @@ export const TreatmentLogForm: React.FC<{
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)
         const { name, value } = e.target;
         setLogData(prev => ({...prev, [name]: value}));
     };
@@ -49,10 +35,7 @@ export const TreatmentLogForm: React.FC<{
         onAddLog(patient.id, {
             ...logData,
             cost: Number(logData.cost) || 0,
-<<<<<<< HEAD
-=======
             satisfactionRating: logData.satisfactionRating ? Number(logData.satisfactionRating) : undefined,
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)
         });
     };
 
@@ -92,11 +75,7 @@ export const TreatmentLogForm: React.FC<{
                      <div style={formRowStyle}>
                         <div style={styles.formGroup}>
                             <label style={styles.label} htmlFor="cost">تكلفة الجلسة</label>
-<<<<<<< HEAD
-                            <input style={styles.input} type="number" id="cost" name="cost" value={logData.cost} onChange={handleChange} placeholder="مثال: 350" required />
-=======
                             <input style={styles.input} type="number" id="cost" name="cost" value={logData.cost || ''} onChange={handleChange} placeholder="مثال: 350" required />
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)
                         </div>
                         <div style={{...styles.formGroup, justifyContent: 'center'}}>
                              <div style={styles.formGroupHorizontal}>
@@ -105,8 +84,6 @@ export const TreatmentLogForm: React.FC<{
                             </div>
                         </div>
                     </div>
-<<<<<<< HEAD
-=======
 
                     {/* New: Satisfaction Rating and Feedback */}
                     <div style={formRowStyle}>
@@ -141,7 +118,6 @@ export const TreatmentLogForm: React.FC<{
                     </div>
                     {/* End New Fields */}
 
->>>>>>> 9da656e (Initial commit for CuraPT clinic app)
                      <div style={styles.formActions}>
                         <button type="button" style={{ ...styles.button, ...styles.buttonSecondary }} onClick={onCancel}>إلغاء</button>
                         <button type="submit" style={{ ...styles.button, ...styles.buttonPrimary }}>إضافة سجل</button>
